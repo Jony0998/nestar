@@ -13,7 +13,7 @@ memberType: {
 
 memberStatus: {
     type: String,
-    enum: MemberType,
+    enum: MemberStatus,
     default: MemberStatus.ACTIVE,
    },
 
@@ -37,7 +37,7 @@ memberNick: {
 
 memberPassword: {
    type: String,
-   select: false,
+   select: false, 
    required: true, 
 },
 
