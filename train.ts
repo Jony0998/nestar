@@ -1,17 +1,36 @@
 // (JONY)
 
-// TASK ZN:
 
-
-function rotateArray<T>(arr: T[], index: number): T[] {
-  const cut = arr.splice(index); 
-  arr.unshift(...cut);
-  return arr;
+function areArraysEqual<T>(a: T[], b: T[]): boolean {
+  return a.length === b.length &&
+         a.every((element, index) => element === b[index]);
 }
 
-console.log(rotateArray([1, 2, 3, 4, 5, 6, 8, 9], 6)); 
+console.log(areArraysEqual([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])); 
+console.log(areArraysEqual([1, 2, 3], [1, 2, 3, 4])); 
 
 
+
+
+
+// Shunday function yozing, u 2 ta array parametr qabul qilsin.
+// Siz bu ikki arrayning qiymatlari o'xshash bo'lishini 
+// (ya'ni, ularning barcha elementlari bir xil bo'lishini) tekshirishingiz kerak.
+
+// MASALAN:
+// areArraysEqual([1, 2, 3], [3, 1, 2]) // true
+// areArraysEqual([1, 2, 3], [3, 1, 2, 1]) // true
+// areArraysEqual([1, 2, 3], [4, 1, 2]) // false
+
+// TASK ZN:
+
+// function rotateArray<T>(arr: T[], index: number): T[] {
+//   const cut = arr.splice(index); 
+//   arr.unshift(...cut);
+//   return arr;
+// }
+
+// console.log(rotateArray([1, 2, 3, 4, 5, 6, 8, 9], 6)); 
 
 // Shunday function yozing, uni array va number parametri bo'lsin.
 // Function'ning vazifasi ikkinchi parametr'da berilgan raqam, birinchi
