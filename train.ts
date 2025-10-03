@@ -1,13 +1,36 @@
 // (JONY)
 
+// ZO-TASK:
 
-function areArraysEqual<T>(a: T[], b: T[]): boolean {
-  return a.length === b.length &&
-         a.every((element, index) => element === b[index]);
+
+function areParenthesesBalanced(str: string): boolean {
+  const balance = [...str].reduce((acc, ch) => {
+    if (acc < 0) return acc; // tezda to‘xtash
+    if (ch === "(") return acc + 1;
+    if (ch === ")") return acc - 1;
+    return acc;
+  }, 0);
+
+  return balance === 0;
 }
 
-console.log(areArraysEqual([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])); 
-console.log(areArraysEqual([1, 2, 3], [1, 2, 3, 4])); 
+console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); 
+console.log(areParenthesesBalanced("(not balanced"));
+
+
+
+// Shunday function yozing, u parametrdagi string ichidagi qavslar miqdori balansda ekanligini aniqlasin.
+//  Ya'ni ochish("(") va yopish(")") qavslar soni bir xil bolishi kerak.
+// MASALAN: areParenthesesBalanced("string()ichida(qavslar)soni()balansda") return true
+
+
+// function areArraysEqual<T>(a: T[], b: T[]): boolean {
+//   return a.length === b.length &&
+//          a.every((element, index) => element === b[index]);
+// }
+
+// console.log(areArraysEqual([1, 2, 3, 4, 5], [1, 2, 3, 4, 5])); 
+// console.log(areArraysEqual([1, 2, 3], [1, 2, 3, 4])); 
 
 
 
