@@ -10,7 +10,8 @@ import { ViewModule } from '../view/view.module';
   imports: [
     MongooseModule.forFeature([
       {
-        name: "Member", schema: MemberSchema
+        name: "Member", 
+        schema: MemberSchema
         },
       ]), 
       AuthModule,
