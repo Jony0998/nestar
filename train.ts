@@ -1,21 +1,50 @@
 // (JONY)
 
+
+function areParenthesesBalanced(str: string): boolean {
+  const stack: string[] = [];
+
+  for (const char of str) {
+    if (char === '(') stack.push(char);
+    else if (char === ')') {
+      if (stack.length === 0) return false;
+      stack.pop();
+    }
+  }
+
+  return stack.length === 0;
+}
+
+
+console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); 
+console.log(areParenthesesBalanced("qavs(balans(da(emas))")); 
+
+
+
+// ZO-TASK:
+
+// Shunday function yozing, u parametrdagi string ichidagi qavslar miqdori 
+// balansda ekanligini aniqlasin.
+//  Ya'ni ochish("(") va yopish(")") qavslar soni bir xil bolishi kerak.
+// MASALAN: areParenthesesBalanced("string()ichida(qavslar)soni()balansda") return true
+
+
 // ZO-TASK:
 
 
-function areParenthesesBalanced(str: string): boolean {
-  const balance = [...str].reduce((acc, ch) => {
-    if (acc < 0) return acc; // tezda to‘xtash
-    if (ch === "(") return acc + 1;
-    if (ch === ")") return acc - 1;
-    return acc;
-  }, 0);
+// function areParenthesesBalanced(str: string): boolean {
+//   const balance = [...str].reduce((acc, ch) => {
+//     if (acc < 0) return acc; // tezda to‘xtash
+//     if (ch === "(") return acc + 1;
+//     if (ch === ")") return acc - 1;
+//     return acc;
+//   }, 0);
 
-  return balance === 0;
-}
+//   return balance === 0;
+// }
 
-console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); 
-console.log(areParenthesesBalanced("(not balanced"));
+// console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); 
+// console.log(areParenthesesBalanced("(not balanced"));
 
 
 
