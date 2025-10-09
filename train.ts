@@ -1,23 +1,41 @@
 // (JONY)
 
+// TASK ZQ:
 
-function areParenthesesBalanced(str: string): boolean {
-  const stack: string[] = [];
-
-  for (const char of str) {
-    if (char === '(') stack.push(char);
-    else if (char === ')') {
-      if (stack.length === 0) return false;
-      stack.pop();
-    }
-  }
-
-  return stack.length === 0;
+function findDuplicates<T>(arr: T[]): T[] {
+  return [...new Set(arr.filter((item, i) => arr.indexOf(item) !== i))];
 }
 
+console.log(findDuplicates([1,2,3,4,5,5,4,3,4]));
 
-console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); 
-console.log(areParenthesesBalanced("qavs(balans(da(emas))")); 
+
+
+// Shunday function yozing, bu function berilgan array parametr
+// ichida ikki marotaba yoki undan ko'p takrorlangan sonlarni alohida
+// array'da yagonadan qaytarsin qaytarsin.
+
+// MASALAN: findDuplicates([1,2,3,4,5,4,3,4]); return [3, 4];
+
+
+
+
+// function areParenthesesBalanced(str: string): boolean {
+//   const stack: string[] = [];
+
+//   for (const char of str) {
+//     if (char === '(') stack.push(char);
+//     else if (char === ')') {
+//       if (stack.length === 0) return false;
+//       stack.pop();
+//     }
+//   }
+
+//   return stack.length === 0;
+// }
+
+
+// console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); 
+// console.log(areParenthesesBalanced("qavs(balans(da(emas))")); 
 
 
 
