@@ -81,7 +81,7 @@ export class Property {
   /** from aggregation **/
 
   @Field(() => Member, {nullable: true})
-  memberDate?: Member;
+  memberData?: Member;
 }
 
 @ObjectType()
@@ -90,5 +90,5 @@ export class Properties {
   list: Property[];
 
   @Field(() => [TotalCounter], {nullable: true})
-  metaCounter: TotalCounter[];
+  metaCounter?: TotalCounter[];
 }

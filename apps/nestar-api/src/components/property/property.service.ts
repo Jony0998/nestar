@@ -58,7 +58,7 @@ export class PropertyService {
     // meLiked
     }
 
-    targetProperty.memberDate = await this.memberService.getMember(null, targetProperty.memberId);
+    targetProperty.memberData = await this.memberService.getMember(null, targetProperty.memberId);
     return targetProperty;
 
   }
@@ -263,5 +263,5 @@ export class PropertyService {
   }
 
 
-  
+
 }
