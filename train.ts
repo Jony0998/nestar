@@ -1,12 +1,33 @@
 // (JONY)
 
-// TASK ZQ:
+// TASK-ZR
 
-function findDuplicates<T>(arr: T[]): T[] {
-  return [...new Set(arr.filter((item, i) => arr.indexOf(item) !== i))];
+function countNumberAndLetters(str: string) {
+  return {
+    number: (str.match(/\p{Nd}/gu) || []).length, // =>  barcha raqamlar
+    letter: (str.match(/\p{L}/gu) || []).length, // => barcha harflar
+  };
 }
 
-console.log(findDuplicates([1,2,3,4,5,5,4,3,4]));
+console.log(countNumberAndLetters("str,i6ngjon152%\\¥"));
+
+
+
+// Shunday function yozing, bu function,
+// berilgan parametr string tarkibidagi raqam va sonlarni
+// sanab object sifatida qaytarsin.
+
+// MASALAN: countNumberAndLetters(“string152%\¥”); return {number: 3, letter: 6};
+
+
+
+// TASK ZQ:
+
+// function findDuplicates<T>(arr: T[]): T[] {
+//   return [...new Set(arr.filter((item, i) => arr.indexOf(item) !== i))];
+// }
+
+// console.log(findDuplicates([1,2,3,4,5,5,4,3,4]));
 
 
 
