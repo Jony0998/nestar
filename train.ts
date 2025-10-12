@@ -1,15 +1,38 @@
 // (JONY)
 
-// TASK-ZR
+// TASK ZS:
 
-function countNumberAndLetters(str: string) {
-  return {
-    number: (str.match(/\p{Nd}/gu) || []).length, // =>  barcha raqamlar
-    letter: (str.match(/\p{L}/gu) || []).length, // => barcha harflar
-  };
+
+function singleNumber(arr: number[]): number {
+  let result = 0;
+  for (const num of arr) {
+    result ^= num; 
+  }
+  return result;
 }
 
-console.log(countNumberAndLetters("str,i6ngjon152%\\¥"));
+console.log(singleNumber([4, 4, 2, 1, 2, 7, 1])); 
+
+
+
+// Shunday function yozing, bu function parametrdagi array ichida
+// bir marotaba takrorlangan element'ni qaytarsin
+
+// MASALAN: singleNumber([4, 2, 1, 2, 1]); return 4;
+
+
+
+
+// TASK-ZR
+
+// function countNumberAndLetters(str: string) {
+//   return {
+//     number: (str.match(/\p{Nd}/gu) || []).length, // =>  barcha raqamlar
+//     letter: (str.match(/\p{L}/gu) || []).length, // => barcha harflar
+//   };
+// }
+
+// console.log(countNumberAndLetters("str,i6ngjon152%\\¥"));
 
 
 
