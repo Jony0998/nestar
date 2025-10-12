@@ -15,6 +15,7 @@ import { LikeModule } from '../like/like.module';
         schema: MemberSchema
         },
       ]), 
+    
       AuthModule,
       ViewModule,
       LikeModule
