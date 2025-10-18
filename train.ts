@@ -1,19 +1,33 @@
 // (JONY)
 
 
+
+// TASK ZU:
+
+// Shunday function yozing, va bu function parametr sifatida
+// raqamlardan iborat array'ni qabul qilsin. Function'ning vazifasi,
+// berilgan parametr array tarkibida takrorlanmagan raqamlarni topib
+// ularni yig'indisini qaytarsin.
+
+// MASALAN: sumOfUnique([1,2,3,2]); return 4;
+
+// Yuqoridagi misolda, argument sifatida pass qilinayotgan array
+// tarkibida bir marotabadan ortiq takrorlanmagan raqamlar, bular '1', '3'.
+// Va natija sifatida yig'indi 4'ga teng.
+
 // TASK ZT:
 
-function firstUniqueCharIndex(str: string): number {
-  for (let i = 0; i < str.length; i++) {
-    if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
-      return i;
-    }
-  }
-  return -1; 
-}
+// function firstUniqueCharIndex(str: string): number {
+//   for (let i = 0; i < str.length; i++) {
+//     if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
+//       return i;
+//     }
+//   }
+//   return -1; 
+// }
 
-console.log(firstUniqueCharIndex("stamp"));   
-console.log(firstUniqueCharIndex("success"));
+// console.log(firstUniqueCharIndex("stamp"));   
+// console.log(firstUniqueCharIndex("success"));
 
 
 
