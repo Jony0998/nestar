@@ -1,8 +1,28 @@
 // (JONY)
 
 
-
 // TASK ZU:
+
+
+function sumOfUnique(nums: number[]): number {
+  const count = new Map<number, number>();
+
+  for (const num of nums) {
+    count.set(num, (count.get(num) || 0) + 1);
+  }
+
+  let sum = 0;
+  for (const [num, freq] of count) {
+    if (freq === 1) {
+      sum += num;
+    }
+  }
+
+  return sum;
+}
+
+console.log(sumOfUnique([1, 2, 3, 8]));     
+
 
 // Shunday function yozing, va bu function parametr sifatida
 // raqamlardan iborat array'ni qabul qilsin. Function'ning vazifasi,
@@ -14,6 +34,8 @@
 // Yuqoridagi misolda, argument sifatida pass qilinayotgan array
 // tarkibida bir marotabadan ortiq takrorlanmagan raqamlar, bular '1', '3'.
 // Va natija sifatida yig'indi 4'ga teng.
+
+
 
 // TASK ZT:
 
