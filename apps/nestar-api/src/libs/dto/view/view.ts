@@ -1,25 +1,25 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
-import { ObjectId } from 'mongoose';
+import type { ObjectId } from 'mongoose';
+import { MemberAuthType, MemberStatus, MemberType } from '../../enums/member.enum';
 import { ViewGroup } from '../../enums/view.enum';
 
-@ObjectType() // serverdan clentga ketyptganda dtp ni quradigan decorator
+@ObjectType()
 export class View {
-  @Field(() => String)
-  _id: ObjectId;
+	@Field(() => String)
+	_id: ObjectId;
 
-  @Field(() => ViewGroup)
-  viewGroup: ViewGroup;
+	@Field(() => ViewGroup)
+	viewGroup: ViewGroup;
 
-  @Field(() => String)
-  viewRefId: ObjectId;
+	@Field(() => String)
+	viewRedId: ObjectId;
 
-  @Field(() => String)
-  memberId: ObjectId;
+	@Field(() => String)
+	memberId: ObjectId;
 
-  @Field(() => Date)
-  createdAt: Date;
+	@Field(() => Date)
+	createdAt: Date;
 
-  @Field(() => Date)
-  updatedAt: Date;
-
+	@Field(() => Date)
+	updatedAt: Date;
 }
