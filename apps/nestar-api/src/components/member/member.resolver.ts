@@ -32,7 +32,7 @@ export class MemberResolver {
 			console.log('Mutation: login');
 			return await this.memberService.login(input);
 		} catch (err) {
-			console.log('Error signup', err);
+			console.log('Error login', err);
 			throw new InternalServerErrorException(err);
 		}
 	}

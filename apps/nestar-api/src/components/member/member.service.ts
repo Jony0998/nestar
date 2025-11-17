@@ -26,7 +26,6 @@ export class MemberService {
 		private likeService: LikeService,
 	) {}
 	public async signup(input: MemberInput): Promise<Member> {
-		// TODO Hash Password
 		input.memberPassword = await this.authService.hashPassword(input.memberPassword);
 
 		try {
@@ -52,7 +51,6 @@ export class MemberService {
 			throw new InternalServerErrorException(Message.BLOCKED_USER);
 		}
 
-		// TODO Compare password
 		const isMatch = await this.authService.comparePasswords(input.memberPassword, response.memberPassword);
 		if (!isMatch) throw new InternalServerErrorException(Message.WRONG_PASSWORD);
 
@@ -72,7 +70,7 @@ export class MemberService {
 				{ new: true },
 			)
 			.exec();
-		if (!result) throw new InternalServerErrorException(Message.UPLOAD_FAILED);
+		if (!result) throw new InternalServerErrorException(Message.UPDATE_FAILED);
 
 		result.accessToken = await this.authService.createToken(result);
 
@@ -170,7 +168,7 @@ export class MemberService {
 			match: T = {},
 			sort: T = { [input?.sort ?? 'createdAt']: input?.direction ?? Direction.DESC };
 
-		if (memberStatus) match.MemberStatus = memberStatus;
+		if (memberStatus) match.memberStatus = memberStatus;
 		if (memberType) match.memberType = memberType;
 		if (text) match.memberNick = { $regex: new RegExp(text, 'i') };
 		console.log('match', match);

@@ -4,7 +4,6 @@ import { Model, ObjectId } from 'mongoose';
 import { Follower, Followers, Following, Followings } from '../../libs/dto/follow/follow';
 import { MemberService } from '../member/member.service';
 import { Direction, Message } from '../../libs/enums/common.enum';
-import { waitForDebugger } from 'inspector';
 import { FollowInquiry } from '../../libs/dto/follow/follow.input';
 import {
 	lookupFollowerData,
@@ -13,7 +12,6 @@ import {
 	loopupAuthMemberLiked,
 } from '../../libs/config';
 import { T } from '../../libs/types/common';
-import { hrtime } from 'process';
 
 @Injectable()
 export class FollowService {
@@ -39,7 +37,7 @@ export class FollowService {
 		return result;
 	}
 
-	public async registerSubscription(followerId: ObjectId, followingId: ObjectId): Promise<Follower> {
+	private async registerSubscription(followerId: ObjectId, followingId: ObjectId): Promise<Follower> {
 		try {
 			return await this.followModel.create({
 				followingId: followingId,
@@ -58,7 +56,7 @@ export class FollowService {
 		const result = await this.followModel.findOneAndDelete({
 			followingId: followingId,
 			followerId: followerId,
-		});
+		}).exec();
 		if (!result) throw new InternalServerErrorException(Message.NO_DATA_FOUND);
 
 		await this.memberService.memberStatsEditor({ _id: followerId, targetKey: 'memberFollowings', modifier: -1 });

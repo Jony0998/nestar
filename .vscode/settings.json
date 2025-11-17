@@ -1,0 +1,42 @@
+{
+	// Icon Theme Settings - Eng chiroyli va yorqin icon theme'lar
+	"workbench.iconTheme": "material-icon-theme",
+	
+	// Material Icon Theme qo'shimcha sozlamalari
+	"material-icon-theme.folders.theme": "specific",
+	"material-icon-theme.folders.color": "#42a5f5",
+	"material-icon-theme.hidesExplorerArrows": false,
+	"material-icon-theme.showWelcomeMessage": false,
+	
+	// Qo'shimcha chiroyli sozlamalar
+	"workbench.colorCustomizations": {
+		"activityBar.background": "#1e1e1e",
+		"sideBar.background": "#252526",
+		"editor.background": "#1e1e1e"
+	},
+	
+	// File icon associations (qo'shimcha iconlar)
+	"material-icon-theme.files.associations": {
+		"*.resolver.ts": "graphql",
+		"*.service.ts": "gear",
+		"*.module.ts": "package",
+		"*.guard.ts": "shield",
+		"*.decorator.ts": "sparkles",
+		"*.model.ts": "database",
+		"*.schema.ts": "database",
+		"*.dto.ts": "json",
+		"*.enum.ts": "checklist",
+		"*.config.ts": "settings",
+		"*.gateway.ts": "socket"
+	},
+	
+	// Folder associations
+	"material-icon-theme.folders.associations": {
+		"components": "components",
+		"libs": "packages",
+		"schemas": "database",
+		"socket": "connection",
+		"batch": "cron"
+	}
+}
+

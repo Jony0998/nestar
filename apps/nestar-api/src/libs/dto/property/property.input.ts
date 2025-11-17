@@ -129,7 +129,7 @@ export class PISearch {
 
 	@IsOptional()
 	@Field(() => PricesRange, { nullable: true })
-	periodsRange?: PricesRange;
+	periodsRange?: PeriodsRange;
 
 	@IsOptional()
 	@Field(() => SquaresRange, { nullable: true })
@@ -188,7 +188,7 @@ export class AgentPropertiesInquiry {
 	@IsOptional()
 	@IsIn(availablePropertySorts)
 	@Field(() => String, { nullable: true })
-	sort?: number;
+	sort?: string;
 
 	@IsOptional()
 	@Field(() => Direction, { nullable: true })

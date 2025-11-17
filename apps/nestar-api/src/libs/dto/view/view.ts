@@ -12,7 +12,7 @@ export class View {
 	viewGroup: ViewGroup;
 
 	@Field(() => String)
-	viewRedId: ObjectId;
+	viewRefId: ObjectId;
 
 	@Field(() => String)
 	memberId: ObjectId;
